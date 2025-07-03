@@ -1,16 +1,21 @@
 @use "../abstracts/mixins" as mixins;
 
-html{
-    --text-color:#1A162E;
-    --icon-color:brightness(0) saturate(100%) invert(8%) sepia(8%) saturate(4205%) hue-rotate(210deg) brightness(96%) contrast(97%);
+html {
+    --text-color: #1a162e;
+    --icon-color: brightness(0) saturate(100%) invert(8%) sepia(8%)
+        saturate(4205%) hue-rotate(210deg) brightness(96%) contrast(97%);
 
-    --body-bg: #F6F6F6;
-    --header-bg-color:#EEE;
-    --top-act-group-bg-color:#FFF;
-    --top-act-group-shadow:rgba(237, 237, 246, 0.20);
-    --top-act-group-separate:#EDEDF6;
+    --body-bg: #f6f6f6;
+    --header-bg-color: #eee;
+    --top-act-group-bg-color: #fff;
+    --top-act-group-shadow: rgba(237, 237, 246, 0.2);
+    --top-act-group-separate: #ededf6;
 
-    @include mixins.breakpoint(lg){
-        --header-bg-color: #FFF;
+    @include mixins.breakpoint(lg) {
+        --header-bg-color: #fff;
     }
+    // Dropdown
+    --dropdown-bg-color: #fff;
+    --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+    --top-menu-border-color: #d2d1d6;
 }

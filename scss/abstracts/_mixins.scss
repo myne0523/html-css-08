@@ -6,14 +6,13 @@ $grid-breakpoints: (
     xxl: 1400px,
 );
 
-@mixin breakpoint($key){
-    $breakpoints:map-get($grid-breakpoints, $key);
-    @if ($breakpoints){
-        @media (max-width:($breakpoints - 0.02)){
+@mixin breakpoint($key) {
+    $breakpoints: map-get($grid-breakpoints, $key);
+    @if ($breakpoints) {
+        @media (max-width: ($breakpoints - 0.02)) {
             @content;
         }
-    }
-    @else{
+    } @else {
         @error "The value #{$key} is not in breakpoint list.";
     }
 }
