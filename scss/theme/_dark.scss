@@ -12,6 +12,7 @@ html.dark {
 
     @include mixins.breakpoint(lg) {
         --header-bg-color: #171c28;
+        --header-shadow-color: rgba(0, 0, 0, 0.2);
     }
     // Dropdown
     --dropdown-bg-color: #2f3441;
@@ -19,4 +20,6 @@ html.dark {
     --dropdown-arrow-color: brightness(0) saturate(100%) invert(19%) sepia(7%)
         saturate(1657%) hue-rotate(186deg) brightness(94%) contrast(92%);
     --top-menu-border-color: #171c28;
+    --menu-column-icon-color: brightness(0) saturate(100%) invert(91%) sepia(1%)
+        saturate(406%) hue-rotate(200deg) brightness(108%) contrast(97%);
 }

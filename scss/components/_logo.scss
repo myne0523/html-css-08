@@ -10,7 +10,7 @@
         margin-left: 40px;
     }
 
-    @include mixins.breakpoint(sm) {
+    @include mixins.breakpoint(md) {
         margin-left: 0;
     }
 
