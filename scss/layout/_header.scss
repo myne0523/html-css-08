@@ -26,14 +26,6 @@
         padding: 16px 0;
         justify-content: space-between;
     }
-
-    &__more {
-        display: none;
-
-        @include mixins.breakpoint(lg) {
-            display: block;
-        }
-    }
 }
 
 .navbar {
@@ -90,6 +82,8 @@
         @include mixins.breakpoint(lg) {
             flex-direction: column;
             align-items: flex-start;
+            overflow-y: auto;
+            height: calc(100% - 26px);
         }
     }
 
@@ -100,10 +94,6 @@
 
         @include mixins.breakpoint(lg) {
             width: 100%;
-
-            &:hover .dropdown {
-                display: none;
-            }
         }
     }
 
@@ -149,10 +139,6 @@
         border-radius: 8px;
         background: var(--top-act-group-bg-color);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
-
-        @include mixins.breakpoint(md) {
-            display: none;
-        }
     }
 
     &__group--isolate {

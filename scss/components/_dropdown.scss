@@ -8,6 +8,11 @@
     padding-top: 54px;
     display: none;
 
+    @include mixins.breakpoint(lg) {
+        position: initial;
+        display: block;
+    }
+
     &__inner {
         --inner-padding: 30px;
 
@@ -26,6 +31,17 @@
             filter: var(--dropdown-arrow-color);
             z-index: -1;
         }
+
+        @include mixins.breakpoint(lg) {
+            padding: 0 40px;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+
+            &::before {
+                content: none;
+            }
+        }
     }
 }
 
@@ -39,6 +55,12 @@
         height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
+
+        &::before {
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
     }
 }
 
@@ -50,6 +72,10 @@
         margin-top: 22px;
     }
 
+    @include mixins.breakpoint(lg) {
+        margin-top: 10px;
+    }
+
     &__icon {
         position: relative;
         width: 36px;
@@ -58,6 +84,10 @@
 
         @include mixins.breakpoint(xl) {
             display: none;
+        }
+
+        @include mixins.breakpoint(lg) {
+            display: block;
         }
     }
 
@@ -86,10 +116,18 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 1.5;
+
+        @include mixins.breakpoint(lg) {
+            margin: 26px;
+        }
     }
 
     &__list {
         margin-top: 19px;
+
+        @include mixins.breakpoint(lg) {
+            margin-top: 0;
+        }
     }
 
     &__item {
@@ -121,6 +159,12 @@
     row-gap: 36px;
     padding-left: var(--inner-padding);
     overflow-y: auto;
+
+    @include mixins.breakpoint(lg) {
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
 
     &--not-main {
         position: initial;
