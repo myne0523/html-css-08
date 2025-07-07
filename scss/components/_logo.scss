@@ -5,12 +5,12 @@
     align-items: center;
     column-gap: 14px;
 
-    @include mixins.breakpoint(lg) {
+    @include mixins.screen(lg) {
         column-gap: 10px;
         margin-left: 40px;
     }
 
-    @include mixins.breakpoint(md) {
+    @include mixins.screen(md) {
         margin-left: 0;
     }
 
@@ -19,13 +19,13 @@
         font-weight: 700;
         line-height: 1.45;
 
-        @include mixins.breakpoint(lg) {
+        @include mixins.screen(lg) {
             font-size: 1.8rem;
         }
     }
 
     &__img {
-        @include mixins.breakpoint(lg) {
+        @include mixins.screen(lg) {
             width: 24px;
             height: 24px;
         }

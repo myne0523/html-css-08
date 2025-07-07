@@ -8,7 +8,7 @@
     padding-top: 54px;
     display: none;
 
-    @include mixins.breakpoint(lg) {
+    @include mixins.screen(lg) {
         position: initial;
         padding-top: 0;
     }
@@ -32,7 +32,7 @@
             z-index: -1;
         }
 
-        @include mixins.breakpoint(lg) {
+        @include mixins.screen(lg) {
             padding: 0 40px;
             border-radius: 0;
             background: transparent;
@@ -43,7 +43,7 @@
             }
         }
 
-        @include mixins.breakpoint(lg) {
+        @include mixins.screen(lg) {
             padding: 0 20px;
         }
     }
@@ -76,7 +76,7 @@
         margin-top: 22px;
     }
 
-    @include mixins.breakpoint(lg) {
+    @include mixins.screen(lg) {
         margin-top: 10px;
     }
 
@@ -86,11 +86,11 @@
         height: 36px;
         flex-shrink: 0;
 
-        @include mixins.breakpoint(xl) {
+        @include mixins.screen(xl) {
             display: none;
         }
 
-        @include mixins.breakpoint(lg) {
+        @include mixins.screen(lg) {
             display: block;
         }
     }
@@ -121,7 +121,7 @@
         font-weight: 500;
         line-height: 1.5;
 
-        @include mixins.breakpoint(lg) {
+        @include mixins.screen(lg) {
             margin-bottom: 26px;
         }
     }
@@ -129,7 +129,7 @@
     &__list {
         margin-top: 19px;
 
-        @include mixins.breakpoint(lg) {
+        @include mixins.screen(lg) {
             margin-top: 0;
         }
     }
@@ -164,7 +164,7 @@
     padding-left: var(--inner-padding);
     overflow-y: auto;
 
-    @include mixins.breakpoint(lg) {
+    @include mixins.screen(lg) {
         position: initial;
         grid-template-columns: 1fr;
         padding-left: 0;
@@ -178,7 +178,7 @@
         height: var(--max-inner-height);
         padding-left: 0;
 
-        @include mixins.breakpoint(lg) {
+        @include mixins.screen(lg) {
             grid-template-columns: 1fr;
             height: auto;
         }
