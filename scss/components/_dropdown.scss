@@ -118,7 +118,7 @@
         line-height: 1.5;
 
         @include mixins.breakpoint(lg) {
-            margin: 26px;
+            margin-bottom: 26px;
         }
     }
 
