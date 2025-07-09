@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mixins;
+
 *,
 ::before,
 ::after {
@@ -40,4 +42,11 @@ select {
 
 .icon {
     filter: var(--icon-color);
+}
+
+.container {
+    @include mixins.screen(sm) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 }
