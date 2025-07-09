@@ -163,6 +163,13 @@ button {
   cursor: pointer;
 }
 
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+}
+
 a,
 img,
 button,
@@ -1327,6 +1334,8 @@ html {
   --like-btn-shadow: rgba(124, 124, 124, 0.2);
   --product-card-bg: #fff;
   --product-card-shadow: rgba(237, 237, 246, 0.2);
+  --filter-form-bg: #fff;
+  --filter-form-shadow: rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1362,6 +1371,8 @@ html.dark {
   --filter-btn-color: #fff;
   --product-card-bg: #171c28;
   --product-card-shadow: rgba(0, 0, 0, 0.2);
+  --filter-form-bg: #292e39;
+  --filter-form-shadow: rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -2047,6 +2058,98 @@ html.dark {
 }
 .product-card__star {
   margin: 0 6px 0 auto;
+}
+
+.filter-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.filter {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--filter-form-bg);
+  box-shadow: 0px 40px 90px var(--filter-form-shadow);
+}
+.filter__row {
+  display: flex;
+  flex-shrink: 1;
+}
+.filter__col:first-child {
+  padding-right: 30px;
+}
+.filter__col + .filter__col {
+  padding: 0 30px;
+  border-left: 1px solid #eeeeee;
+}
+.filter__col:last-child {
+  padding-right: 0;
+}
+.filter__heading {
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-color);
+}
+.filter__form-label {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-color);
+}
+.filter__form-label--small {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+.filter__form-group {
+  margin-top: 20px;
+}
+.filter__form-group--inline {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+.filter__form-slider {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #d2d1d6;
+}
+.filter__form-slider::before, .filter__form-slider::after {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 6px solid #ffb700;
+  border-radius: 50%;
+  background: var(--filter-form-bg);
+}
+.filter__form-slider::before {
+  position: absolute;
+  top: 50%;
+  left: 6.6%;
+  transform: translateY(-50%);
+}
+.filter__form-slider::after {
+  position: absolute;
+  top: 50%;
+  right: 33%;
+  transform: translateY(-50%);
+}
+.filter__form-input {
+  width: 121px;
+  padding: 8px 12px;
+  border: 1px solid #d2d1d6;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.42;
+  color: var(--text-color);
 }
 
 .home__container {
