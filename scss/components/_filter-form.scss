@@ -14,7 +14,6 @@
 
     &__row {
         display: flex;
-        flex-shrink: 1;
     }
 
     &__col:first-child {
@@ -97,12 +96,61 @@
         &-input {
             width: 121px;
             padding: 8px 12px;
+        }
+
+        &-input,
+        &-select-wrap {
             border: 1px solid #d2d1d6;
             border-radius: 6px;
+        }
+
+        &-input,
+        &-select {
             font-size: 1.4rem;
             font-weight: 500;
             line-height: 1.42;
             color: var(--text-color);
+        }
+
+        &-select-wrap {
+            display: flex;
+            align-items: center;
+            height: 45px;
+        }
+
+        &-select {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: var(--width, 108px);
+            height: calc(100% - 10px);
+            padding: 0 14px;
+            cursor: pointer;
+        }
+
+        &-select + &-select {
+            border-left: 1 solid #d2d1d6;
+        }
+
+        &-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+        }
+
+        &-tag {
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: #9e9da8;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.42;
+            background: var(--filter-form-tag-bg);
+            transition: color 0.2s;
+
+            &:hover {
+                color: var(--text-color);
+            }
         }
     }
 }
