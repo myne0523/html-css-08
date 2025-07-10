@@ -94,11 +94,39 @@
         }
 
         &-input {
-            width: 121px;
-            padding: 8px 12px;
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.46;
+
+            &::placeholder {
+                font-weight: 400;
+            }
+
+            &-icon {
+                margin-left: 12px;
+            }
         }
 
-        &-input,
+        &-text-input {
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            width: 334px;
+            height: 44px;
+
+            &--small {
+                width: 121px;
+                height: 36px;
+                padding: 6px 12px;
+            }
+        }
+
+        &-text-input--small &-input {
+            font-size: 1.4rem;
+        }
+
+        &-text-input,
         &-select-wrap {
             border: 1px solid #d2d1d6;
             border-radius: 6px;
