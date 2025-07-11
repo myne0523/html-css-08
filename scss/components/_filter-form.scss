@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mixins;
+
 .filter-wrap {
     position: relative;
     z-index: 1;
@@ -11,6 +13,23 @@
     border-radius: 20px;
     background: var(--filter-form-bg);
     box-shadow: 0px 40px 90px var(--filter-form-shadow);
+    transition: opacity, visibility;
+    transition-duration: 0.4s;
+
+    @include mixins.screen(xl) {
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    @include mixins.screen(sm) {
+        width: 80vw;
+    }
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
 
     &__arrow {
         position: absolute;
@@ -25,11 +44,22 @@
 
     &__col:first-child {
         padding-right: 30px;
+
+        @include mixins.screen(xl) {
+            padding-bottom: 15px;
+            padding-right: 0;
+        }
     }
 
     &__col + &__col {
         padding: 0 30px;
         border-left: 1px solid #eeeeee;
+
+        @include mixins.screen(xl) {
+            padding: 15px 0;
+            border-left: none;
+            border-top: 1px solid #eeeeee;
+        }
     }
 
     &__col:last-child {
@@ -122,10 +152,18 @@
             width: 334px;
             height: 44px;
 
+            @include mixins.screen(sm) {
+                width: 100%;
+            }
+
             &--small {
                 width: 121px;
                 height: 36px;
-                padding: 6px 12px;
+                padding: 0px 12px;
+
+                @include mixins.screen(sm) {
+                    width: 100%;
+                }
             }
         }
 
@@ -161,10 +199,14 @@
             height: calc(100% - 10px);
             padding: 0 14px;
             cursor: pointer;
+
+            @include mixins.screen(sm) {
+                min-width: var(--width, 100px);
+            }
         }
 
         &-select + &-select {
-            border-left: 1 solid #d2d1d6;
+            border-left: 1px solid #d2d1d6;
         }
 
         &-tags {
@@ -193,15 +235,33 @@
         display: flex;
         justify-content: flex-end;
         margin-top: 32px;
+
+        @include mixins.screen(xl) {
+            position: sticky;
+            bottom: 0;
+            margin-top: 25px;
+            background: var(--filter-form-bg);
+            padding-bottom: 30px;
+        }
     }
 
     &__cancel,
     &__submit {
         height: 38px;
         padding: 0 10px;
+
+        @include mixins.screen(sm) {
+            flex: 1;
+        }
     }
 
     &__submit {
         font-size: 1.4rem;
+    }
+
+    &__content {
+        @include mixins.screen(xl) {
+            flex-direction: column;
+        }
     }
 }
