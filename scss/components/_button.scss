@@ -35,3 +35,48 @@
         margin-top: 6px;
     }
 }
+
+.btn {
+    height: 46px;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    background: #f8f8fb;
+    user-select: none;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    + .btn {
+        margin-left: 20px;
+    }
+
+    &--text {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #9e9da8;
+        background: transparent;
+    }
+
+    &--primary {
+        font-size: 1.4rem;
+        background: #ffb700;
+    }
+
+    &--outline {
+        border: 1px solid #d2d1d6;
+        background: transparent;
+    }
+
+    &--rounded {
+        border-radius: 99px;
+    }
+
+    &[disable],
+    &--disable {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}

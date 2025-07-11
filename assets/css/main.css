@@ -2014,6 +2014,43 @@ html.dark {
   margin-top: 6px;
 }
 
+.btn {
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  background: #f8f8fb;
+  user-select: none;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn + .btn {
+  margin-left: 20px;
+}
+.btn--text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #9e9da8;
+  background: transparent;
+}
+.btn--primary {
+  font-size: 1.4rem;
+  background: #ffb700;
+}
+.btn--outline {
+  border: 1px solid #d2d1d6;
+  background: transparent;
+}
+.btn--rounded {
+  border-radius: 99px;
+}
+.btn[disable], .btn--disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .product-card {
   padding: 16px;
   border-radius: 20px;
@@ -2070,11 +2107,17 @@ html.dark {
 .filter {
   position: absolute;
   right: 0;
-  top: 50px;
+  top: 57px;
   padding: 30px;
   border-radius: 20px;
   background: var(--filter-form-bg);
   box-shadow: 0px 40px 90px var(--filter-form-shadow);
+}
+.filter__arrow {
+  position: absolute;
+  top: -17px;
+  right: 24px;
+  height: 20.5px;
 }
 .filter__row {
   display: flex;
@@ -2213,6 +2256,18 @@ html.dark {
 }
 .filter__form-tag:hover {
   color: var(--text-color);
+}
+.filter__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+.filter__cancel, .filter__submit {
+  height: 38px;
+  padding: 0 10px;
+}
+.filter__submit {
+  font-size: 1.4rem;
 }
 
 .home__container {
