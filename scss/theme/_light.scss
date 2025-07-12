@@ -44,4 +44,9 @@ html {
     --filter-form-bg: #fff;
     --filter-form-shadow: rgba(200, 200, 200, 0.4);
     --filter-form-tag-bg: #f8f8fb;
+    // Footer
+    --footer-bg-color: #eee;
+    @include mixins.screen(lg) {
+        --footer-bg-color: #fff;
+    }
 }
