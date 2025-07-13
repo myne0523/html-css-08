@@ -1,4 +1,9 @@
 .form {
+    &:has(:invalid) &__submit-btn {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
     &__group {
         margin-top: 30px;
 
@@ -8,12 +13,27 @@
         }
     }
 
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+        .form__text-input {
+            border-color: red;
+            background: rgba($color: red, $alpha: 0.1);
+        }
+
+        .form__error,
+        .form__input-icon--error {
+            display: block;
+        }
+
+        .form__input-icon {
+            display: none;
+        }
+    }
+
     &__text-input {
         height: 50px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 12px;
+        padding: 0 12px;
         border-radius: 10px;
         border: 1.5px solid var(--form-text-input-border);
 
@@ -23,6 +43,8 @@
     }
 
     &__input {
+        flex: 1;
+        height: 100%;
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 1.44;
@@ -37,19 +59,68 @@
 
         &-icon {
             margin-left: 12px;
+
+            &--error {
+                margin-left: 12px;
+                width: 24px;
+                height: 24px;
+                display: none;
+                animation: shake 0.8s;
+            }
         }
     }
 
+    &__error {
+        margin-top: 10px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: red;
+        display: none;
+    }
+
     &__checkbox {
+        position: relative;
         display: flex;
         align-items: center;
-        column-gap: 10px;
+        user-select: none;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+        }
+
+        &::before {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #9e9da8;
+            border-radius: 7px;
+        }
+
+        &::after {
+            left: 2px;
+            top: 4px;
+            width: 16px;
+            height: 8px;
+            border: 2px solid;
+            border-color: transparent transparent #fff #fff;
+            rotate: -45deg;
+        }
 
         &-label {
-            color: #9e9da8;
+            margin-left: 30px;
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 1.46;
+            color: #9e9da8;
+        }
+
+        &:has(:checked) {
+            &::before {
+                border-color: #ffb700;
+                background: #ffb700;
+            }
         }
     }
 
