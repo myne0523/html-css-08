@@ -219,6 +219,14 @@
         border-radius: 8px;
         cursor: pointer;
     }
+
+    &__sign-up {
+        @include mixins.screen(md) {
+            height: 40px !important;
+            padding: 0 8px !important;
+            font-size: 1.5rem !important;
+        }
+    }
 }
 
 .nav-btn {

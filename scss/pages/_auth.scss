@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mixins;
+
 .auth {
     display: flex;
     min-height: 100vh;
@@ -5,15 +7,32 @@
     &__intro,
     &__content {
         flex: 1;
+        padding: 0 30px;
     }
 
     &__intro {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         row-gap: 50px;
         background: var(--auth-intro-bg);
+
+        &-logo,
+        &-next {
+            position: absolute;
+            left: 50%;
+            translate: -50%;
+        }
+
+        &-logo {
+            top: 80px;
+        }
+
+        &-img {
+            max-width: 100%;
+        }
 
         &-text {
             max-width: 412px;
@@ -22,10 +41,26 @@
             font-weight: 500;
             line-height: 1.44;
         }
+
+        &-next {
+            bottom: 50px;
+        }
     }
 
     &__content {
         background: var(--auth-content-bg);
+
+        @include mixins.screen(md) {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            transition: translate 0.3s;
+            overflow-y: auto;
+
+            &.hide {
+                translate: 100%;
+            }
+        }
 
         &-inner {
             display: flex;

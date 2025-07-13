@@ -1608,6 +1608,13 @@ html.dark {
   border-radius: 8px;
   cursor: pointer;
 }
+@media (max-width: 767.98px) {
+  .top-act__sign-up {
+    height: 40px !important;
+    padding: 0 8px !important;
+    font-size: 1.5rem !important;
+  }
+}
 
 .nav-btn {
   height: 50px;
@@ -2621,14 +2628,27 @@ html.dark {
 }
 .auth__intro, .auth__content {
   flex: 1;
+  padding: 0 30px;
 }
 .auth__intro {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   row-gap: 50px;
   background: var(--auth-intro-bg);
+}
+.auth__intro-logo, .auth__intro-next {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
+.auth__intro-logo {
+  top: 80px;
+}
+.auth__intro-img {
+  max-width: 100%;
 }
 .auth__intro-text {
   max-width: 412px;
@@ -2637,8 +2657,23 @@ html.dark {
   font-weight: 500;
   line-height: 1.44;
 }
+.auth__intro-next {
+  bottom: 50px;
+}
 .auth__content {
   background: var(--auth-content-bg);
+}
+@media (max-width: 767.98px) {
+  .auth__content {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    transition: translate 0.3s;
+    overflow-y: auto;
+  }
+  .auth__content.hide {
+    translate: 100%;
+  }
 }
 .auth__content-inner {
   display: flex;
