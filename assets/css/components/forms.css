@@ -1,0 +1,50 @@
+.form__group {
+  margin-top: 30px;
+}
+.form__group--inline {
+  display: flex;
+  align-items: center;
+}
+.form__text-input {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid var(--form-text-input-border);
+}
+.form__text-input:focus-within {
+  border-color: #77dae6;
+}
+.form__input {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+  color: var(--text-color);
+}
+.form__input::placeholder {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+  color: var(--form-input-color);
+}
+.form__input-icon {
+  margin-left: 12px;
+}
+.form__checkbox {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.form__checkbox-label {
+  color: #9e9da8;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.46;
+}
+.form__pull-right {
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=forms.css.map */

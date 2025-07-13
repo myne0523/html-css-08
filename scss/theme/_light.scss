@@ -49,4 +49,13 @@ html {
     @include mixins.screen(lg) {
         --footer-bg-color: #fff;
     }
+
+    // Sign Up page
+    --auth-intro-bg: #f6f6f6;
+    --auth-content-bg: #fff;
+    --auth-text-color: #9e9da8;
+
+    // Form
+    --form-text-input-border: #d2d1d6;
+    --form-input-color: #d2d1d6;
 }
