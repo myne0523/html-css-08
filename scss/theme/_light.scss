@@ -52,8 +52,14 @@ html {
 
     // Sign Up page
     --auth-intro-bg: #f6f6f6;
+    @include mixins.screen(md) {
+        --auth-intro-bg: #fff;
+    }
     --auth-content-bg: #fff;
     --auth-text-color: #9e9da8;
+    --auth-btn-border-sign-in: #d2d1d6;
+    --auth-btn-icon-color: brightness(0) saturate(100%) invert(8%) sepia(8%) saturate(5467%) hue-rotate(213deg) brightness(100%) contrast(95%);
+    --auth-btn-color-sign-in: #1a162e;
 
     // Form
     --form-text-input-border: #d2d1d6;

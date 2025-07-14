@@ -42,6 +42,9 @@ html.dark {
     --auth-intro-bg: #171c28;
     --auth-content-bg: #292e39;
     --auth-text-color: #b9babe;
+    --auth-btn-border-sign-in: #b9babe;
+    --auth-btn-icon-color: brightness(0) saturate(100%) invert(88%) sepia(9%) saturate(91%) hue-rotate(191deg) brightness(88%) contrast(81%);
+    --auth-btn-color-sign-in: #b9babe;
 
     // Form
     --form-text-input-border: #b9babe;
