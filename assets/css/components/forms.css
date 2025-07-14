@@ -9,9 +9,14 @@
   display: flex;
   align-items: center;
 }
+@media (max-width: 767.98px) {
+  .form__group {
+    margin-top: 20px;
+  }
+}
 .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__text-input {
-  border-color: red;
-  background: rgba(255, 0, 0, 0.1);
+  border-color: #ed4337;
+  background: rgba(237, 67, 55, 0.1);
 }
 .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__error,
 .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon--error {
@@ -30,6 +35,11 @@
 }
 .form__text-input:focus-within {
   border-color: #77dae6;
+}
+@media (max-width: 767.98px) {
+  .form__text-input {
+    height: 48px;
+  }
 }
 .form__input {
   flex: 1;
@@ -53,14 +63,19 @@
   width: 24px;
   height: 24px;
   display: none;
-  animation: shake 0.8s;
+  animation: shake 0.5s;
+}
+@media (max-width: 767.98px) {
+  .form__input {
+    font-size: 1.6rem;
+  }
 }
 .form__error {
   margin-top: 10px;
   text-align: left;
   font-weight: 500;
   font-size: 1.4rem;
-  color: red;
+  color: #ed4337;
   display: none;
 }
 .form__checkbox {
@@ -80,6 +95,7 @@
   border-radius: 7px;
 }
 .form__checkbox::after {
+  display: none;
   left: 2px;
   top: 4px;
   width: 16px;
@@ -95,9 +111,17 @@
   line-height: 1.46;
   color: #9e9da8;
 }
+@media (max-width: 767.98px) {
+  .form__checkbox-label {
+    font-size: 1.4rem;
+  }
+}
 .form__checkbox:has(:checked)::before {
   border-color: #ffb700;
   background: #ffb700;
+}
+.form__checkbox:has(:checked)::after {
+  display: block;
 }
 .form__pull-right {
   margin-left: auto;

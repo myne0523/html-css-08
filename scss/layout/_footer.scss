@@ -5,18 +5,6 @@
     font-size: 1.4rem;
     background: var(--footer-bg-color);
 
-    &__logo.logo {
-        @include mixins.screen(lg) {
-            margin-left: 0;
-        }
-    }
-
-    .logo__title {
-        @include mixins.screen(lg) {
-            font-size: 2.2rem;
-        }
-    }
-
     &__row {
         display: grid;
         grid-template-columns: 2fr 1.3fr 1fr 1fr 1.5fr;

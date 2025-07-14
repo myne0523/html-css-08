@@ -4,6 +4,10 @@
     display: flex;
     min-height: 100vh;
 
+    @supports (-webkit-touch-callout: none) {
+        min-height: -webkit-fill-available;
+    }
+
     &__intro,
     &__content {
         flex: 1;
@@ -40,6 +44,10 @@
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 1.44;
+
+            @include mixins.screen(md) {
+                font-size: 1.5rem;
+            }
         }
 
         &-next {
@@ -77,6 +85,10 @@
         font-size: 3rem;
         font-weight: 500;
         line-height: 1.46;
+
+        @include mixins.screen(md) {
+            font-size: 2.2rem;
+        }
     }
 
     &__desc {
@@ -86,11 +98,19 @@
         font-weight: 500;
         line-height: 1.46;
         color: #9e9da8;
+
+        @include mixins.screen(md) {
+            font-size: 1.4rem;
+        }
     }
 
     &__form {
         width: 100%;
         margin-top: 30px;
+
+        @include mixins.screen(md) {
+            margin-top: 10px;
+        }
     }
 
     &__link {
@@ -98,6 +118,10 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.46;
+
+        @include mixins.screen(md) {
+            font-size: 1.4rem;
+        }
     }
 
     &__btn-group {
@@ -108,12 +132,10 @@
     }
 
     &__btn-sign-up {
-        height: 50px;
         width: 100%;
     }
 
     &__btn-sign-in.btn {
-        height: 50px;
         margin-left: 0;
         display: flex;
         align-items: center;
@@ -128,9 +150,14 @@
         font-weight: 400;
         line-height: 1.44;
 
-        .auth__link {
+        @include mixins.screen(md) {
+            margin-top: 56px;
+            font-size: 1.6rem;
+        }
+
+        &-link {
             margin-left: 10px;
-            font-size: 1.8rem;
+            font-size: inherit;
         }
     }
 }

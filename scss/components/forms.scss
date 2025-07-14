@@ -1,3 +1,6 @@
+@use "../abstracts/mixins" as mixins;
+$error-color: #ed4337;
+
 .form {
     &:has(:invalid) &__submit-btn {
         opacity: 0.5;
@@ -11,12 +14,16 @@
             display: flex;
             align-items: center;
         }
+
+        @include mixins.screen(md) {
+            margin-top: 20px;
+        }
     }
 
     &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
         .form__text-input {
-            border-color: red;
-            background: rgba($color: red, $alpha: 0.1);
+            border-color: $error-color;
+            background: rgba($color: $error-color, $alpha: 0.1);
         }
 
         .form__error,
@@ -39,6 +46,10 @@
 
         &:focus-within {
             border-color: #77dae6;
+        }
+
+        @include mixins.screen(md) {
+            height: 48px;
         }
     }
 
@@ -65,8 +76,12 @@
                 width: 24px;
                 height: 24px;
                 display: none;
-                animation: shake 0.8s;
+                animation: shake 0.5s;
             }
+        }
+
+        @include mixins.screen(md) {
+            font-size: 1.6rem;
         }
     }
 
@@ -75,7 +90,7 @@
         text-align: left;
         font-weight: 500;
         font-size: 1.4rem;
-        color: red;
+        color: $error-color;
         display: none;
     }
 
@@ -99,6 +114,7 @@
         }
 
         &::after {
+            display: none;
             left: 2px;
             top: 4px;
             width: 16px;
@@ -114,12 +130,20 @@
             font-weight: 500;
             line-height: 1.46;
             color: #9e9da8;
+
+            @include mixins.screen(md) {
+                font-size: 1.4rem;
+            }
         }
 
         &:has(:checked) {
             &::before {
                 border-color: #ffb700;
                 background: #ffb700;
+            }
+
+            &::after {
+                display: block;
             }
         }
     }

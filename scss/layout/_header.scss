@@ -27,6 +27,38 @@
         padding: 16px 0;
         justify-content: space-between;
     }
+
+    &__logo {
+        @include mixins.screen(lg) {
+            &.logo {
+                column-gap: 10px;
+                margin-left: 40px;
+            }
+        }
+
+        @include mixins.screen(md) {
+            &.logo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+                margin-left: 0;
+            }
+        }
+
+        &-title.logo__title {
+            @include mixins.screen(lg) {
+                font-size: 1.8rem;
+            }
+        }
+
+        &-img.logo__img {
+            @include mixins.screen(lg) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
 }
 
 .navbar {
