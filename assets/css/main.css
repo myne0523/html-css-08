@@ -1358,6 +1358,9 @@ html {
   --auth-btn-color-sign-in: #1a162e;
   --form-text-input-border: #d2d1d6;
   --form-input-color: #d2d1d6;
+  --product-detail-bg: #ffffff;
+  --breadcrumbs-bg: #f6f6f6;
+  --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1415,6 +1418,9 @@ html.dark {
   --auth-btn-color-sign-in: #b9babe;
   --form-text-input-border: #b9babe;
   --form-input-color: #b9babe;
+  --product-detail-bg: #292e39;
+  --breadcrumbs-bg: #171c28;
+  --breadcrumbs-shadow: rgba(23, 28, 40, 0.2);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -2695,6 +2701,41 @@ html.dark {
   background: rgba(39, 243, 117, 0.2);
 }
 
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  min-height: 64px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--breadcrumbs-bg);
+  box-shadow: 0px 20px 60px 10px var(--breadcrumbs-shadow);
+}
+@media (max-width: 767.98px) {
+  .breadcrumbs {
+    gap: 16px;
+  }
+}
+.breadcrumbs__link {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: #9e9da8;
+}
+@media (max-width: 767.98px) {
+  .breadcrumbs__link {
+    font-size: 1.4rem;
+  }
+}
+.breadcrumbs__link--current {
+  color: inherit;
+}
+
 .home {
   margin-bottom: 50px;
 }
@@ -2902,6 +2943,16 @@ html.dark {
   font-size: inherit;
 }
 .auth__message {
+  margin-top: 30px;
+}
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  background: var(--product-detail-bg);
+}
+.product-container {
   margin-top: 30px;
 }
 
