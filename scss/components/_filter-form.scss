@@ -73,19 +73,6 @@
     }
 
     &__form {
-        &-label {
-            display: block;
-            font-size: 2.2rem;
-            font-weight: 500;
-            line-height: 1.45;
-            color: var(--text-color);
-
-            &--small {
-                margin-bottom: 10px;
-                font-size: 1.4rem;
-            }
-        }
-
         &-group {
             margin-top: 20px;
 
@@ -173,67 +160,16 @@
             font-size: 1.4rem;
         }
 
-        &-text-input,
-        &-select-wrap {
+        &-text-input {
             border: 1px solid #d2d1d6;
             border-radius: 6px;
         }
 
-        &-input,
-        &-select {
+        &-input {
             font-size: 1.4rem;
             font-weight: 500;
             line-height: 1.42;
             color: var(--text-color);
-        }
-
-        &-select-wrap {
-            display: flex;
-            align-items: center;
-            height: 45px;
-        }
-
-        &-select {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-width: var(--width, 108px);
-            height: calc(100% - 10px);
-            padding: 0 14px;
-            cursor: pointer;
-
-            @include mixins.screen(xl) {
-                flex: 1;
-            }
-        }
-
-        &-select + &-select {
-            border-left: 1px solid #d2d1d6;
-        }
-
-        &-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 20px;
-
-            @include mixins.screen(sm) {
-                gap: 10px;
-            }
-        }
-
-        &-tag {
-            padding: 6px 12px;
-            border-radius: 6px;
-            color: #9e9da8;
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 1.42;
-            background: var(--filter-form-tag-bg);
-            transition: color 0.2s;
-
-            &:hover {
-                color: var(--text-color);
-            }
         }
     }
 
