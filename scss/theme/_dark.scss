@@ -52,6 +52,12 @@ html.dark {
 
     // Product detail page
     --product-detail-bg: #292e39;
+    --prod-info-heading-color: #eee;
+    @include mixins.screen(md) {
+        --product-detail-bg: #292e39;
+        --prod-info-bg: #171c28;
+        --prod-info-heading-color: #b9babe;
+    }
     --prod-info-price-color: #eee;
     --prod-info-bg: #171c28;
     --prod-info-tag-bg: #292e39;

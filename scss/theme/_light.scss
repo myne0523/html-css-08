@@ -67,6 +67,11 @@ html {
 
     // Product detail page
     --product-detail-bg: #ffffff;
+    --prod-info-heading-color: #1a162e;
+    @include mixins.screen(md) {
+        --product-detail-bg: #fafafd;
+        --prod-info-bg: #fff;
+    }
     --prod-info-price-color: #000;
     --prod-info-bg: #f6f6f6;
     --prod-info-tag-bg: #ededf6;
@@ -74,4 +79,7 @@ html {
     // Breadcrumbs
     --breadcrumbs-bg: #f6f6f6;
     --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
+    @include mixins.screen(md) {
+        --breadcrumbs-bg: #fff;
+    }
 }

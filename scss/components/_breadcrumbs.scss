@@ -12,6 +12,7 @@
     box-shadow: 0px 20px 60px 10px var(--breadcrumbs-shadow);
 
     @include mixins.screen(md) {
+        border-radius: 20px;
         gap: 16px;
     }
 
