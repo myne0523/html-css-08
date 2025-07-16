@@ -10,6 +10,10 @@
 
     &-container {
         margin-top: 30px;
+
+        @include mixins.screen(md) {
+            margin-top: 20px;
+        }
     }
 
     &-preview {
@@ -68,13 +72,13 @@
             object-fit: contain;
             border: 1.5px solid rgb(158, 157, 168, 0.4);
             border-radius: 8px;
-            cursor: pointer;
             opacity: 0.9;
             transition: opacity 0.3s border-color 0.3s;
 
-            &:hover {
+            &:not(&--current):hover {
                 opacity: 1;
                 border-color: #9e9da8;
+                cursor: pointer;
             }
 
             &--current {
@@ -87,6 +91,7 @@
 
 .prod-info {
     padding: 60px;
+    border-radius: 10px;
     background: var(--prod-info-bg);
 
     @include mixins.screen(xxl) {
@@ -95,7 +100,7 @@
 
     @include mixins.screen(md) {
         padding: 0 16px 16px 16px;
-        border-radius: 20px;
+        border-radius: 0 0 20px 20px;
     }
 
     &-content {
@@ -150,7 +155,7 @@
         font-weight: 500;
         line-height: 1.42;
         color: #67b044;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
+        background: var(--prod-info-tax-bg);
     }
 
     &__total-price {

@@ -1363,8 +1363,10 @@ html {
   --prod-info-price-color: #000;
   --prod-info-bg: #f6f6f6;
   --prod-info-tag-bg: #ededf6;
+  --prod-info-tax-bg: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
   --breadcrumbs-bg: #f6f6f6;
   --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
+  --Search-bar-bg: #fff;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1438,8 +1440,10 @@ html.dark {
   --prod-info-price-color: #eee;
   --prod-info-bg: #171c28;
   --prod-info-tag-bg: #292e39;
+  --prod-info-tax-bg: rgb(103 176 68 / 0.2);
   --breadcrumbs-bg: #171c28;
   --breadcrumbs-shadow: rgba(23, 28, 40, 0.2);
+  --Search-bar-bg: #171c28;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -2768,6 +2772,29 @@ html.dark {
   color: inherit;
 }
 
+.search-bar {
+  align-items: center;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--Search-bar-bg);
+}
+.search-bar__input {
+  flex: 1;
+  height: 100%;
+  padding-left: 15px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.43;
+}
+.search-bar__input::placeholder {
+  font-weight: 400;
+  color: #9e9da8;
+}
+.search-bar__submit {
+  height: 100%;
+  padding: 0 15px;
+}
+
 .home {
   margin-bottom: 50px;
 }
@@ -2988,6 +3015,11 @@ html.dark {
 .product-container {
   margin-top: 30px;
 }
+@media (max-width: 767.98px) {
+  .product-container {
+    margin-top: 20px;
+  }
+}
 .product-preview {
   padding: 0 30px;
 }
@@ -3044,13 +3076,13 @@ html.dark {
   object-fit: contain;
   border: 1.5px solid rgba(158, 157, 168, 0.4);
   border-radius: 8px;
-  cursor: pointer;
   opacity: 0.9;
   transition: opacity 0.3s border-color 0.3s;
 }
-.product-preview__thumb-img:hover {
+.product-preview__thumb-img:not(.product-preview__thumb-img--current):hover {
   opacity: 1;
   border-color: #9e9da8;
+  cursor: pointer;
 }
 .product-preview__thumb-img--current {
   opacity: 1;
@@ -3059,6 +3091,7 @@ html.dark {
 
 .prod-info {
   padding: 60px;
+  border-radius: 10px;
   background: var(--prod-info-bg);
 }
 @media (max-width: 1399.98px) {
@@ -3069,7 +3102,7 @@ html.dark {
 @media (max-width: 767.98px) {
   .prod-info {
     padding: 0 16px 16px 16px;
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
   }
 }
 @media (max-width: 767.98px) {
@@ -3119,7 +3152,7 @@ html.dark {
   font-weight: 500;
   line-height: 1.42;
   color: #67b044;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
+  background: var(--prod-info-tax-bg);
 }
 .prod-info__total-price {
   margin: 20px 0;
