@@ -1,4 +1,9 @@
+@use "../abstracts/mixins" as mixins;
+
 .review-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding: 30px;
     border-radius: 16px;
     background: var(--review-card-bg);
@@ -6,6 +11,20 @@
     &__content {
         display: flex;
         column-gap: 20px;
+        margin-bottom: 20px;
+
+        @include mixins.screen(xl) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 20px;
+            text-align: center;
+        }
+
+        @include mixins.screen(md) {
+            flex-direction: row;
+            align-items: initial;
+            text-align: initial;
+        }
     }
 
     &__avt {
@@ -30,7 +49,16 @@
         display: flex;
         align-items: center;
         column-gap: 8px;
-        margin-top: 20px;
+        margin-top: auto;
+
+        @include mixins.screen(xl) {
+            flex-direction: column;
+            row-gap: 8px;
+        }
+
+        @include mixins.screen(md) {
+            flex-direction: row;
+        }
 
         &--title {
             margin-left: 12px;
@@ -38,5 +66,10 @@
             font-weight: 500;
             line-height: 1.44;
         }
+    }
+
+    &__star-list {
+        display: flex;
+        column-gap: 8px;
     }
 }
