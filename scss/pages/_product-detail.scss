@@ -104,6 +104,7 @@
     }
 
     &-content {
+        padding-bottom: 30px;
         @include mixins.screen(md) {
             border-radius: 20px;
             background: var(--prod-info-bg);
@@ -227,5 +228,46 @@
         font-size: 1.4rem;
         font-weight: 400;
         line-height: 1.42;
+    }
+}
+
+.prod-tab {
+    &__list {
+        display: flex;
+        align-items: center;
+        margin: 0 -30px;
+    }
+
+    &__item {
+        padding: 0 30px;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.45;
+        color: #9e9da8;
+
+        &--current {
+            color: inherit;
+        }
+    }
+
+    &__contents {
+        padding-top: 30px;
+    }
+
+    &__content {
+        display: none;
+
+        &--current {
+            display: block;
+        }
+    }
+}
+
+.prod-content {
+    &__heading {
+        margin-bottom: 30px;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.41;
     }
 }

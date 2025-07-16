@@ -86,4 +86,10 @@ html {
 
     // Search bar
     --Search-bar-bg: #fff;
+
+    // Review card
+    --review-card-bg: #fafafd;
+    @include mixins.screen(md) {
+        --review-card-bg: #fff;
+    }
 }
