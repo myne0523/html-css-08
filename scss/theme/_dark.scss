@@ -70,6 +70,7 @@ html.dark {
     // Breadcrumbs
     --breadcrumbs-bg: #171c28;
     --breadcrumbs-shadow: rgba(23, 28, 40, 0.2);
+    --checkout-breadcrumbs-bg: #171c28;
 
     // Search bar
     --Search-bar-bg: #171c28;
@@ -79,4 +80,9 @@ html.dark {
 
     // Text content
     --text-content-hr-bg: #63606077;
+
+    // Cart info
+    --cart-info-bg: #171c28;
+    --cart-info-shadow: rgba(23, 28, 40, 0.2);
+    --cart-item-input-border-color: #292e39;
 }
