@@ -1698,8 +1698,10 @@ html.dark {
 .top-act__group--isolate .top-act__btn {
   padding: 13px;
 }
-.top-act__btn {
+.top-act__btn-wrap {
   position: relative;
+}
+.top-act__btn {
   column-gap: 10px;
   padding: 13px 20px;
   cursor: pointer;
@@ -1755,15 +1757,34 @@ html.dark {
 
 .act-dropdown {
   position: absolute;
-  top: 60px;
+  top: 76px;
   right: -60px;
   width: min(500px, 100vw);
+  transition-property: opacity, visibility;
+  transition-duration: 0.5s;
+}
+.act-dropdown.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.act-dropdown.show {
+  opacity: 1;
+  visibility: visible;
 }
 .act-dropdown__inner {
+  position: relative;
   padding: 30px;
   border-radius: 20px;
   background: var(--act-dropdown-inner-bg);
   box-shadow: 0px 40px 90px 20px var(--act-dropdown-inner-shadow);
+}
+.act-dropdown__arrow {
+  position: absolute;
+  top: -17px;
+  right: 90px;
+  height: 20.5px;
+  filter: var(--dropdown-arrow-color);
+  z-index: -1;
 }
 .act-dropdown__top {
   display: flex;
@@ -1822,7 +1843,7 @@ html.dark {
 .cart-preview-item__img-wrap {
   position: relative;
   padding-top: 100%;
-  border: 1px solid #d2d1d6;
+  border: 1px solid var(--act-dropdown-bottom-border-bg);
   border-radius: 10px;
 }
 .cart-preview-item__thumb {

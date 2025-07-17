@@ -224,8 +224,11 @@
         padding: 13px;
     }
 
-    &__btn {
+    &__btn-wrap {
         position: relative;
+    }
+
+    &__btn {
         @extend %flexItemsCenter;
         column-gap: 10px;
         padding: 13px 20px;
@@ -290,15 +293,37 @@
 
 .act-dropdown {
     position: absolute;
-    top: 60px;
+    top: 76px;
     right: -60px;
     width: min(500px, 100vw);
+    transition-property: opacity, visibility;
+    transition-duration: 0.5s;
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
     &__inner {
+        position: relative;
         padding: 30px;
         border-radius: 20px;
         background: var(--act-dropdown-inner-bg);
         box-shadow: 0px 40px 90px 20px var(--act-dropdown-inner-shadow);
+    }
+
+    &__arrow {
+        position: absolute;
+        top: -17px;
+        right: 90px;
+        height: 20.5px;
+        filter: var(--dropdown-arrow-color);
+        z-index: -1;
     }
 
     &__top {
@@ -370,7 +395,7 @@
     &__img-wrap {
         position: relative;
         padding-top: 100%;
-        border: 1px solid #d2d1d6;
+        border: 1px solid var(--act-dropdown-bottom-border-bg);
         border-radius: 10px;
     }
 
