@@ -65,14 +65,14 @@
     }
 
     a {
-        color: #ffb700;
+        color: #0071dc;
         text-decoration: underline;
     }
 
     blockquote {
-        background: rgb(255, 183, 0, 0.1);
+        background: rgb(119, 218, 230, 0.2);
         padding: 20px;
-        border-left: 2px solid #ffb700;
+        border-left: 2px solid #77dae6;
 
         p {
             margin: 0;
@@ -83,6 +83,6 @@
         border: none;
         height: 1.5px;
         margin: 40px 0;
-        background: #ebebeb;
+        background: var(--text-content-hr-bg);
     }
 }
