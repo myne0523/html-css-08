@@ -1836,6 +1836,12 @@ html.dark {
   min-width: 278px;
   background: #ffb700;
 }
+.act-dropdown__separate {
+  margin: 10px 0 20px 0;
+  width: 100%;
+  height: 1px;
+  background: var(--act-dropdown-bottom-border-bg);
+}
 
 .cart-preview-item {
   text-align: left;
