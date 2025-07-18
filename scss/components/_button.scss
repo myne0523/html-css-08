@@ -46,20 +46,25 @@
     font-size: 1.8rem;
     font-weight: 500;
     background: #f8f8fb;
+    white-space: nowrap;
     user-select: none;
+
+    &--small {
+        height: 40px;
+        padding: 0 16px;
+    }
 
     &:hover {
         opacity: 0.9;
     }
 
-    + .btn {
+    & + &:not(.btn--no-margin) {
         margin-left: 20px;
     }
 
     &--text {
         font-size: 1.5rem;
         font-weight: 400;
-        color: #9e9da8;
         background: transparent;
     }
 
