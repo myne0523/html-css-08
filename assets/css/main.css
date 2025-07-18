@@ -1389,6 +1389,8 @@ html {
   --cart-info-bg: #fff;
   --cart-info-shadow: rgba(237, 237, 246, 0.2);
   --cart-item-input-border-color: #d2d1d6;
+  --gift-item-icon-wrap-bg: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), #7644e1;
+  --gift-item-icon-wrap-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1480,6 +1482,8 @@ html.dark {
   --cart-info-bg: #171c28;
   --cart-info-shadow: rgba(23, 28, 40, 0.2);
   --cart-item-input-border-color: #292e39;
+  --gift-item-icon-wrap-bg: #292e39;
+  --gift-item-icon-wrap-shadow: rgba(23, 28, 40, 0.2);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -3609,6 +3613,62 @@ html.dark {
   background: var(--cart-info-bg);
   box-shadow: 0px 20px 60px 10px var(--cart-info-shadow);
 }
+.cart-info + .cart-info {
+  margin-top: 30px;
+}
+.cart-info__bottom {
+  margin-top: 30px;
+}
+.cart-info__continue {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.cart-info__continue-link {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
+.cart-info__continue-icon {
+  rotate: 90deg;
+  transition: translate 0.3s;
+}
+.cart-info__continue-link:hover .cart-info__continue-icon {
+  translate: -5px;
+}
+.cart-info__continue-btn {
+  margin-top: 30px;
+  height: 68px;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+.cart-info__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
+.cart-info__row--bold {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.cart-info__separate {
+  height: 1px;
+  margin: 30px 0;
+  background: var(--cart-item-input-border-color);
+}
+.cart-info__sub-label {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
 
 .cart-item {
   display: flex;
@@ -3690,6 +3750,31 @@ html.dark {
   font-weight: 700;
   line-height: 1.45;
   text-align: right;
+}
+
+.gift-item {
+  display: flex;
+  column-gap: 20px;
+}
+.gift-item__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 14px;
+  background: var(--gift-item-icon-wrap-bg);
+  box-shadow: 0px 20px 60px 10px var(--gift-item-icon-wrap-shadow);
+}
+.gift-item__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
+.gift-item__desc {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.42;
 }
 
 /*# sourceMappingURL=main.css.map */
