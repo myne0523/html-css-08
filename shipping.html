@@ -78,17 +78,26 @@
                                             <h2 class="user-address__title">Shipping address</h2>
                                             <p class="user-address__desc">Where should we deliver your order?</p>
                                         </div>
-                                        <button class="btn btn--primary btn--rounded user-address__btn">
-                                            <img src="./assets/icons/plus.svg" alt="" class="user-address__btn-icon" />
+                                        <button class="btn btn--primary btn--rounded btn--small user-address__btn">
+                                            <img src="./assets/icons/plus.svg" alt="" class="icon user-address__btn-icon" />
                                             Add a new address
                                         </button>
                                     </div>
                                     <div class="user-address__list">
+                                        <!-- Empty message -->
+                                        <!-- <p class="user-address__message">
+                                            Not address yet.
+                                            <a class="user-address__link" href="#!"> Add new address</a>
+                                        </p> -->
+
                                         <!-- User's address 1 -->
                                         <article class="address-card">
                                             <div class="address-card__left">
                                                 <div class="address-card__choose">
                                                     <!-- Custom checkbox -->
+                                                    <label class="address-card__checkbox">
+                                                        <input type="checkbox" class="address-card__checkbox-input" checked />
+                                                    </label>
                                                 </div>
                                                 <div class="address-card__info">
                                                     <h3 class="address-card__title">Imran Khan</h3>
@@ -114,6 +123,9 @@
                                             <div class="address-card__left">
                                                 <div class="address-card__choose">
                                                     <!-- Custom checkbox -->
+                                                    <label class="address-card__checkbox">
+                                                        <input type="checkbox" class="address-card__checkbox-input" />
+                                                    </label>
                                                 </div>
                                                 <div class="address-card__info">
                                                     <h3 class="address-card__title">Imran Khan</h3>
@@ -286,9 +298,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="col-4 col-xxl-5">
-                                            <a href="#!" class="btn btn--primary btn--rounded cart-info__continue-btn">Continue </a>
-                                        </div>
+                                        <div class="col-4 col-xxl-5"></div>
                                     </div>
                                 </div>
                             </div>
@@ -312,6 +322,7 @@
                                     <span>Estimated Total</span>
                                     <span>$201.65</span>
                                 </div>
+                                <a href="./shipping.html" class="btn btn--primary btn--rounded cart-info__continue-btn">Continue to checkout</a>
                             </div>
                         </div>
                     </div>
