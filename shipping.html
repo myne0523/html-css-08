@@ -394,10 +394,36 @@
                             <p class="form__error">Address not empty</p>
                         </div>
                         <div class="form__group">
-                            <label for="city" class="form__label form__label--small">Address</label>
+                            <label for="city" class="form__label form__label--small">City/District/Ward</label>
                             <div class="form__text-input form__text-input--small">
-                                <input type="text" name="city" id="" placeholder="City/District/Ward" class="form__input" required />
+                                <input
+                                    type="text"
+                                    name="city"
+                                    id=""
+                                    placeholder="City/District/Ward"
+                                    class="form__input js-toggle"
+                                    required
+                                    toggle-target="#city-dialog"
+                                />
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon--error" />
+                                <div id="city-dialog" class="form__select-dialog hide">
+                                    <div class="form__search">
+                                        <input type="text" name="" id="" placeholder="Search" class="form__search-input" />
+                                        <img src="./assets/icons/search.svg" alt="" class="icon form__search-icon" />
+                                    </div>
+                                    <ul class="form__options-list">
+                                        <li class="form__options-item form__options-item--current">item1</li>
+                                        <li class="form__options-item">item2</li>
+                                        <li class="form__options-item">item3</li>
+                                        <li class="form__options-item">item4</li>
+                                        <li class="form__options-item">item5</li>
+                                        <li class="form__options-item">item6</li>
+                                        <li class="form__options-item">item7</li>
+                                        <li class="form__options-item">item8</li>
+                                        <li class="form__options-item">item9</li>
+                                        <li class="form__options-item">item10</li>
+                                    </ul>
+                                </div>
                             </div>
                             <p class="form__error">Choose your location</p>
                         </div>

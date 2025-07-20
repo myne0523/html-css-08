@@ -181,6 +181,7 @@ input:-webkit-autofill:active,
 input:-webkit-autofill:hover {
   transition: background-color 1s 999s;
   -webkit-text-fill-color: inherit;
+  caret-color: var(--text-color);
 }
 
 a,
@@ -1402,6 +1403,7 @@ html {
   --gift-item-icon-wrap-shadow: rgba(237, 237, 246, 0.2);
   --dialog-content-bg: #fff;
   --dialog-content-shadow: rgba(237, 237, 246, 0.2);
+  --form-options-item-bg: #eee;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1497,6 +1499,7 @@ html.dark {
   --gift-item-icon-wrap-shadow: rgba(23, 28, 40, 0.2);
   --dialog-content-bg: #171c28;
   --dialog-content-shadow: rgba(23, 28, 40, 0.2);
+  --form-options-item-bg: #292e39;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -2777,6 +2780,7 @@ html.dark {
   resize: none;
 }
 .form__text-input {
+  position: relative;
   height: 50px;
 }
 .form__text-input--small {
@@ -2821,6 +2825,59 @@ html.dark {
 }
 .form__input-icon {
   margin-left: 12px;
+}
+.form__select-dialog {
+  position: absolute;
+  bottom: 44px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  max-height: 310px;
+  padding: 10px 0;
+  border: 1.5px solid var(--form-text-input-border);
+  border-radius: 10px;
+  box-shadow: 0px 20px 60px 10px var(--dialog-content-shadow);
+  background: var(--dialog-content-bg);
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 8px;
+  transition: opacity visibility translate;
+  transition-duration: 0.2s;
+}
+.form__select-dialog.show {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+}
+.form__search {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 10px;
+  border-bottom: 1.5px solid var(--form-text-input-border);
+}
+.form__search-input {
+  flex: 1;
+}
+.form__search-icon {
+  width: 16px;
+}
+.form__options-list {
+  margin-top: 10px;
+  flex: 1;
+  overflow-y: auto;
+}
+.form__options-item {
+  padding: 8px 20px;
+  font-size: 1.4rem;
+}
+.form__options-item:not(.form__options-item--current):hover {
+  background: var(--form-options-item-bg);
+  cursor: pointer;
+}
+.form__options-item--current {
+  font-weight: 500;
+  background: rgba(255, 183, 0, 0.3);
 }
 .form__error {
   margin-top: 10px;
