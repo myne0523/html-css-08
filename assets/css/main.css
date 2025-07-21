@@ -175,6 +175,10 @@ input {
   padding: 0;
 }
 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+textarea:-webkit-autofill:hover,
 input:-webkit-autofill,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active,
@@ -2826,6 +2830,14 @@ html.dark {
 .form__input-icon {
   margin-left: 12px;
 }
+.form__close-dialog {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 18px;
+  font-size: 3rem;
+  opacity: 0.8;
+}
 .form__select-dialog {
   position: absolute;
   bottom: 44px;
@@ -2834,7 +2846,7 @@ html.dark {
   flex-direction: column;
   min-width: 230px;
   max-height: 310px;
-  padding: 10px 0;
+  padding-bottom: 10px;
   border: 1.5px solid var(--form-text-input-border);
   border-radius: 10px;
   box-shadow: 0px 20px 60px 10px var(--dialog-content-shadow);
@@ -2844,28 +2856,62 @@ html.dark {
   translate: 0 8px;
   transition: opacity visibility translate;
   transition-duration: 0.2s;
+  z-index: 1;
 }
 .form__select-dialog.show {
   opacity: 1;
   visibility: visible;
   translate: 0;
 }
+@media (max-width: 575.98px) {
+  .form__select-dialog {
+    position: fixed;
+    max-width: initial;
+    max-height: initial;
+    inset: 0;
+    border-radius: 0;
+    border: none;
+  }
+}
 .form__search {
   display: flex;
   align-items: center;
-  padding: 0 20px 10px;
+  flex-shrink: 0;
+  padding: 0 20px;
   border-bottom: 1.5px solid var(--form-text-input-border);
+  height: 38px;
 }
 .form__search-input {
   flex: 1;
+  width: 100%;
+  font-size: 1.6rem;
 }
 .form__search-icon {
   width: 16px;
+  margin-left: 10px;
+}
+@media (max-width: 575.98px) {
+  .form__search-icon {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 991.98px) {
+  .form__search {
+    height: 42px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__search {
+    flex-direction: row-reverse;
+    margin-top: 30px;
+  }
 }
 .form__options-list {
   margin-top: 10px;
   flex: 1;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .form__options-item {
   padding: 8px 20px;
@@ -2878,6 +2924,11 @@ html.dark {
 .form__options-item--current {
   font-weight: 500;
   background: rgba(255, 183, 0, 0.3);
+}
+@media (max-width: 991.98px) {
+  .form__options-item {
+    padding: 14px 20px;
+  }
 }
 .form__error {
   margin-top: 10px;

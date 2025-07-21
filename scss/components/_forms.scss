@@ -134,6 +134,15 @@ $error-color: #ed4337;
         }
     }
 
+    &__close-dialog {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 2px 18px;
+        font-size: 3rem;
+        opacity: 0.8;
+    }
+
     &__select-dialog {
         position: absolute;
         bottom: 44px;
@@ -142,7 +151,7 @@ $error-color: #ed4337;
         flex-direction: column;
         min-width: 230px;
         max-height: 310px;
-        padding: 10px 0;
+        padding-bottom: 10px;
         border: 1.5px solid var(--form-text-input-border);
         border-radius: 10px;
         box-shadow: 0px 20px 60px 10px var(--dialog-content-shadow);
@@ -152,26 +161,55 @@ $error-color: #ed4337;
         translate: 0 8px;
         transition: opacity visibility translate;
         transition-duration: 0.2s;
+        z-index: 1;
 
         &.show {
             opacity: 1;
             visibility: visible;
             translate: 0;
         }
+
+        @include mixins.screen(sm) {
+            position: fixed;
+            max-width: initial;
+            max-height: initial;
+            inset: 0;
+            border-radius: 0;
+            border: none;
+        }
     }
 
     &__search {
         display: flex;
         align-items: center;
-        padding: 0 20px 10px;
+        flex-shrink: 0;
+        padding: 0 20px;
         border-bottom: 1.5px solid var(--form-text-input-border);
+        height: 38px;
 
         &-input {
             flex: 1;
+            width: 100%;
+            font-size: 1.6rem;
         }
 
         &-icon {
             width: 16px;
+            margin-left: 10px;
+
+            @include mixins.screen(sm) {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+        }
+
+        @include mixins.screen(lg) {
+            height: 42px;
+        }
+
+        @include mixins.screen(sm) {
+            flex-direction: row-reverse;
+            margin-top: 30px;
         }
     }
 
@@ -179,6 +217,7 @@ $error-color: #ed4337;
         margin-top: 10px;
         flex: 1;
         overflow-y: auto;
+        overscroll-behavior: contain;
     }
 
     &__options-item {
@@ -193,6 +232,10 @@ $error-color: #ed4337;
         &--current {
             font-weight: 500;
             background: rgb(255, 183, 0, 0.3);
+        }
+
+        @include mixins.screen(lg) {
+            padding: 14px 20px;
         }
     }
 
