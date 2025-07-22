@@ -1409,6 +1409,9 @@ html {
   --dialog-content-shadow: rgba(237, 237, 246, 0.2);
   --form-options-item-bg: #eee;
   --payment-item-bg: #f6f6f6;
+  --profile-page-bg: #f6f6f6;
+  --profile-sidebar-bg: #fff;
+  --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1506,6 +1509,9 @@ html.dark {
   --dialog-content-shadow: rgba(23, 28, 40, 0.2);
   --form-options-item-bg: #292e39;
   --payment-item-bg: #292e39;
+  --profile-page-bg: #292e39;
+  --profile-sidebar-bg: #171c28;
+  --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -4407,6 +4413,85 @@ html.dark {
   font-weight: 500;
   line-height: 1.44;
   color: #9e9da8;
+}
+
+.profile {
+  background: var(--profile-page-bg);
+  margin-bottom: 30px;
+}
+.profile-container {
+  margin-top: 30px;
+}
+.profile__sidebar {
+  border-radius: 20px;
+  box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
+  background: var(--profile-sidebar-bg);
+  overflow: hidden;
+}
+.profile-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 246px;
+  padding: 40px 20px 20px;
+  background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%), url("../img/profile/cover.png") no-repeat center/cover;
+  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+}
+.profile-user__avt {
+  width: 122px;
+  height: 122px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+  background: #eee content-box;
+}
+.profile-user__name {
+  margin-top: 15px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.44;
+  color: #fff;
+}
+.profile-user__desc {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.46;
+  color: #fafafd;
+}
+.profile-menu {
+  margin: 30px;
+}
+.profile-menu__title {
+  margin-bottom: 18px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
+.profile-menu__list {
+  margin-top: -6px;
+}
+.profile-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding: 6px 4px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+.profile-menu__item:hover {
+  background: #ebebeb;
+}
+.profile-menu__icon {
+  width: 20px;
+  height: 20px;
+}
+.profile-menu__link {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.46;
 }
 
 /*# sourceMappingURL=main.css.map */
