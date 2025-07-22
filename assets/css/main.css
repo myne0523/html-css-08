@@ -1412,6 +1412,7 @@ html {
   --profile-page-bg: #f6f6f6;
   --profile-sidebar-bg: #fff;
   --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+  --new-card-color: #d2d1d6;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1512,6 +1513,7 @@ html.dark {
   --profile-page-bg: #292e39;
   --profile-sidebar-bg: #171c28;
   --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+  --new-card-color: #b9babe;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -3403,6 +3405,99 @@ html.dark {
   }
 }
 
+.payment-card {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--payment-card-bg);
+  overflow: hidden;
+}
+.payment-card__img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+.payment-card__top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.payment-card__type {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.43;
+}
+.payment-card__number {
+  margin-top: 38px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.44;
+}
+.payment-card__bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.payment-card__expired {
+  margin: 0 auto 0 40px;
+}
+.payment-card__label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.75;
+}
+.payment-card__value {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.payment-card__circle {
+  position: relative;
+  width: 42px;
+  height: 28px;
+}
+.payment-card__circle::before, .payment-card__circle::after {
+  position: absolute;
+  top: 0;
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.payment-card__circle::before {
+  left: 0;
+  z-index: 1;
+  background: #f94545;
+  mix-blend-mode: hard-light;
+}
+.payment-card__circle::after {
+  right: 0;
+  background: #ffb700;
+}
+
+.new-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px dashed var(--new-card-color);
+  background: transparent;
+}
+.new-card__text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.43;
+}
+
 .home {
   margin-bottom: 50px;
 }
@@ -4435,7 +4530,6 @@ html.dark {
   height: 246px;
   padding: 40px 20px 20px;
   background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%), url("../img/profile/cover.png") no-repeat center/cover;
-  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
 }
 .profile-user__avt {
   width: 122px;
@@ -4492,6 +4586,9 @@ html.dark {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.46;
+}
+.profile__desc {
+  margin-bottom: 16px;
 }
 
 /*# sourceMappingURL=main.css.map */
