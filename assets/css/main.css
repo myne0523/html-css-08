@@ -1412,6 +1412,7 @@ html {
   --profile-page-bg: #f6f6f6;
   --profile-sidebar-bg: #fff;
   --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+  --profile-menu-item-hover-bg: #ebebeb;
   --new-card-color: #d2d1d6;
   --account-info-bg: #f6f6f6;
   --account-info-icon-bg: #fff;
@@ -1516,6 +1517,7 @@ html.dark {
   --profile-page-bg: #292e39;
   --profile-sidebar-bg: #171c28;
   --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+  --profile-menu-item-hover-bg: rgb(235, 235, 235, 0.3);
   --new-card-color: #b9babe;
   --account-info-bg: #292e39;
   --account-info-icon-bg: #171c28;
@@ -3494,6 +3496,7 @@ html.dark {
   justify-content: center;
   gap: 14px;
   height: 100%;
+  min-height: 170px;
   border-radius: 10px;
   border: 1px dashed var(--new-card-color);
   background: transparent;
@@ -3516,6 +3519,7 @@ html.dark {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 54px;
   height: 54px;
   border-radius: 8px;
@@ -3535,6 +3539,7 @@ html.dark {
 
 .favorite-item {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 .favorite-item__separate {
@@ -3543,14 +3548,22 @@ html.dark {
   background: var(--favorite-item-separate-bg);
 }
 .favorite-item__thumb {
-  width: 151px;
-  height: 108px;
-  object-fit: contain;
+  width: 110px;
+}
+@media (max-width: 991.98px) {
+  .favorite-item__thumb {
+    width: 80px;
+  }
 }
 .favorite-item__title {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.46;
+}
+@media (max-width: 575.98px) {
+  .favorite-item__title {
+    font-size: 1.4rem;
+  }
 }
 .favorite-item__content {
   display: flex;
@@ -3558,10 +3571,22 @@ html.dark {
   gap: 20px;
   margin-top: 10px;
 }
+@media (max-width: 575.98px) {
+  .favorite-item__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
 .favorite-item__price {
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 1.45;
+}
+@media (max-width: 575.98px) {
+  .favorite-item__price {
+    font-size: 1.8rem;
+  }
 }
 
 .home {
@@ -4596,6 +4621,7 @@ html.dark {
   height: 246px;
   padding: 40px 20px 20px;
   background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%), url("../img/profile/cover.png") no-repeat center/cover;
+  box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
 }
 .profile-user__avt {
   width: 122px;
@@ -4641,7 +4667,7 @@ html.dark {
   transition: background-color 0.3s;
 }
 .profile-menu__item:hover {
-  background: #ebebeb;
+  background: var(--profile-menu-item-hover-bg);
 }
 .profile-menu__icon {
   width: 20px;

@@ -1,6 +1,7 @@
 @use "../abstracts/mixins" as mixins;
 .favorite-item {
     display: flex;
+    align-items: center;
     gap: 20px;
 
     &__separate {
@@ -10,15 +11,21 @@
     }
 
     &__thumb {
-        width: 151px;
-        height: 108px;
-        object-fit: contain;
+        width: 110px;
+
+        @include mixins.screen(lg) {
+            width: 80px;
+        }
     }
 
     &__title {
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.46;
+
+        @include mixins.screen(sm) {
+            font-size: 1.4rem;
+        }
     }
 
     &__content {
@@ -26,11 +33,21 @@
         align-items: center;
         gap: 20px;
         margin-top: 10px;
+
+        @include mixins.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
     }
 
     &__price {
         font-size: 2.2rem;
         font-weight: 500;
         line-height: 1.45;
+
+        @include mixins.screen(sm) {
+            font-size: 1.8rem;
+        }
     }
 }
