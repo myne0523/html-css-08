@@ -1555,7 +1555,7 @@ html.dark {
 
 .top-bar {
   position: relative;
-  padding: 30px 0;
+  padding: 16px 0;
   z-index: 1;
 }
 @media (max-width: 991.98px) {
@@ -2392,7 +2392,7 @@ html.dark {
   display: flex;
   gap: 20px;
   height: 100%;
-  padding: 20px 26px 20px 20px;
+  padding: 20px;
   border-radius: 16px;
   background: var(--cate-item-bg);
 }
@@ -2408,8 +2408,8 @@ html.dark {
 }
 .cate-item__thumb {
   display: block;
-  width: 116px;
-  height: 116px;
+  width: 100px;
+  height: 100px;
   border-radius: 16px;
   object-fit: contain;
   background: var(--cate-item-thumb-bg);
