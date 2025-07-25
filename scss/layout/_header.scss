@@ -249,6 +249,10 @@
         background: var(--top-act-group-separate);
     }
 
+    &__user {
+        position: relative;
+    }
+
     &__avt {
         display: block;
         width: 50px;
@@ -256,6 +260,15 @@
         object-fit: cover;
         border-radius: 8px;
         cursor: pointer;
+    }
+
+    &__dropdown {
+        right: -15px !important;
+        width: min(300px, 100vw) !important;
+    }
+
+    &__arrow {
+        right: 15px !important;
     }
 
     &__sign-up {
@@ -317,6 +330,7 @@
         border-radius: 20px;
         background: var(--act-dropdown-inner-bg);
         box-shadow: 0px 40px 90px 20px var(--act-dropdown-inner-shadow);
+        z-index: 0;
     }
 
     &__arrow {
@@ -428,5 +442,55 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.46;
+    }
+}
+
+.user-menu {
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__avt {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    &__name {
+        margin-bottom: 6px;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    &__username {
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    &__list {
+        margin-top: 30px;
+    }
+
+    &__item {
+        display: flex;
+        padding: 12px 0;
+
+        &-separate {
+            padding: 16px 0 12px 0;
+            border-top: 1.5px solid var(--form-text-input-border);
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__icon {
+        width: 20px;
     }
 }

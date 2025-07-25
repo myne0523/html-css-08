@@ -3723,7 +3723,58 @@
             </div>
 
             <div class="top-act__user">
-                <img src="./assets/img/header-avt.jpg" alt="" class="top-act__avt" />
+                <button class="js-toggle" toggle-target="#act-dropdown__personal-info">
+                    <img src="./assets/img/header-avt.jpg" alt="" class="top-act__avt" />
+                </button>
+
+                <!-- Dropdown -->
+                <div id="act-dropdown__personal-info" class="act-dropdown hide top-act__dropdown">
+                    <div class="act-dropdown__inner user-menu">
+                        <img src="./assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow top-act__arrow" />
+
+                        <div class="user-menu__top">
+                            <img src="./assets/img/header-avt.jpg" alt="" class="user-menu__avt" />
+                            <div>
+                                <p class="user-menu__name">Jon Snow</p>
+                                <p class="user-menu__username">@jonsnow</p>
+                            </div>
+                        </div>
+
+                        <ul class="user-menu__list">
+                            <li class="user-menu__item">
+                                <a href="./profile.html" class="user-menu__link">
+                                    <img src="./assets/icons/user.svg" alt="" class="user-menu__icon icon" />
+                                    Profile
+                                </a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a href="./favourite.html" class="user-menu__link">
+                                    <img src="./assets/icons/favorite-list.svg" alt="" class="user-menu__icon icon" />
+                                    Favourite List
+                                </a>
+                            </li>
+                            <li class="user-menu__item user-menu__item-separate">
+                                <a href="#!" class="user-menu__link">
+                                    <img src="./assets/icons/mode-light.svg" alt="" class="user-menu__icon icon" />
+                                    <img src="./assets/icons/mode-dark.svg" alt="" class="d-none user-menu__icon icon" />
+                                    Mode
+                                </a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a href="#!" class="user-menu__link">
+                                    <img src="./assets/icons/setting.svg" alt="" class="user-menu__icon icon" />
+                                    Setting
+                                </a>
+                            </li>
+                            <li class="user- user-menu__item-separate">
+                                <a href="./index.html" class="user-menu__link">
+                                    <img src="./assets/icons/log-out.svg" alt="" class="user-menu__icon icon" />
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
